@@ -1,0 +1,8 @@
+{
+  "title": "Liste de course",
+  "todos": [
+    { "id": "c1", "label": "Bread", "checked": true },
+    { "id": "c2", "label": "Cheese", "checked": false },
+    { "id": "c3", "label": "Coffee", "checked": false }
+  ]
+}
