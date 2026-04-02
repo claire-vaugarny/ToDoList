@@ -1,4 +1,5 @@
 {
+  "tests": "",
   "title": "Liste de course",
   "todos": [
     { "id": "c1", "label": "Bread", "checked": true },
