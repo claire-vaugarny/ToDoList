@@ -1,0 +1,25 @@
+{
+"title": [
+    {
+      "id": 1,
+      "value": "Liste de courses"
+    }
+  ],
+  "todos": [
+    {
+      "label": "Milk",
+      "id": "c1"
+    },
+    {
+      "id": "c2",
+      "label": "Cheese",
+      "checked": false
+    },
+    {
+      "label": "Coffee",
+      "checked": false,
+      "id": "ZdkrExD-bZI"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
