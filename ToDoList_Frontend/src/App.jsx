@@ -1,23 +1,16 @@
-//import { useState } from 'react'
-
-import Exemple from "./Exemple";
-import ExempleListe from "./ExempleListe";
-import ExempleCheckBox from "./ExempleCheckBox";
-import ExempleAttente from "./ExempleAttente";
-
-//import './App.css'
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Test from "./pages/Test";
 
 function App() {
   return (
-    <div>
-    <h1>Todo List</h1>
-    <Exemple></Exemple>
-    <ExempleListe></ExempleListe>
-    <ExempleCheckBox></ExempleCheckBox>
-    <ExempleAttente></ExempleAttente>
-
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/test" element={<Test />} />
+        <Route path="/*" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
