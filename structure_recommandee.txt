@@ -23,3 +23,4 @@ mon-projet/
 │
 ├── package.json           # (optionnel, pour concurrently)
 └── README.md
+└── .gitignore
