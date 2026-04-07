@@ -1,25 +1,27 @@
 {
-"title": [
+  "notes": [
     {
-      "id": 1,
-      "value": "Liste de courses"
-    }
-  ],
-  "todos": [
-    {
-      "label": "Milk",
-      "id": "c1"
+      "id": "note1",
+      "title": "Liste de courses",
+      "todos": [
+        {
+          "id": "c1",
+          "label": "Milk"
+        },
+        {
+          "id": "c2",
+          "label": "Cheese"
+        },
+        {
+          "id": "c3",
+          "label": "Coffee"
+        }
+      ]
     },
     {
-      "id": "c2",
-      "label": "Cheese",
-      "checked": false
-    },
-    {
-      "label": "Coffee",
-      "checked": false,
-      "id": "ZdkrExD-bZI"
+      "id": "note2",
+      "title": "Autre note",
+      "todos": []
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }

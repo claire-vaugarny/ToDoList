@@ -1,0 +1,48 @@
+.add-btn {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #22c55e;
+  background-color: #22c55e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Texte */
+.add-btn-text {
+  color: white;
+  font-weight: 600;
+  margin-left: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Icône */
+.add-btn-icon {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 40px;
+  background-color: #16a34a;
+  color : white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Animation hover */
+.add-btn:hover .add-btn-text {
+  transform: translateX(80px);
+}
+
+.add-btn:hover .add-btn-icon {
+  width: 100%;
+}
+
+/* Effet clic */
+.add-btn:active {
+  background-color: #15803d;
+}

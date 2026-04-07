@@ -1,0 +1,25 @@
+mon-projet/
+│
+├── backend/
+│   ├── db.json
+│   ├── routes.json        # (optionnel pour custom routes)
+│   └── package.json       # (si tu veux gérer le serveur séparément)
+│
+├── frontend/
+│   ├── public/
+│   │   └── index.html
+│   │
+│   ├── src/
+│   │   ├── assets/        # images, styles globaux
+│   │   ├── components/    # composants réutilisables
+│   │   ├── pages/         # pages (Home, About, etc.)
+│   │   ├── services/      # appels API (fetch/axios)
+│   │   ├── hooks/         # custom hooks React
+│   │   ├── context/       # context API (si utilisé)
+│   │   ├── App.js
+│   │   └── index.js
+│   │
+│   └── package.json
+│
+├── package.json           # (optionnel, pour concurrently)
+└── README.md

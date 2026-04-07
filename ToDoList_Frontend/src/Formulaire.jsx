@@ -58,7 +58,6 @@ function Formulaire({ onUpdateTasks }) {
           onBlur={handleBlur}
         />
       </div>
-      <button type="submit">Soumettre</button>
     </form>
   );
 }
