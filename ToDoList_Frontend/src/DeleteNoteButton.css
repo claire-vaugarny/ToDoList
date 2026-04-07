@@ -1,10 +1,10 @@
-.add-btn {
+.delete-btn {
   position: relative;
-  width: 150px;
+  width: 160px;
   height: 40px;
   border-radius: 10px;
-  border: 1px solid #22c55e;
-  background-color: #22c55e;
+  border: 1px solid #ef4444;
+  background-color: #ef4444;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@
 }
 
 /* Texte */
-.add-btn-text {
+.delete-btn-text {
   color: white;
   font-weight: 600;
   margin-left: 5px;
@@ -20,29 +20,33 @@
 }
 
 /* Icône */
-.add-btn-icon {
+.delete-btn-icon {
   position: absolute;
   right: 0;
   height: 100%;
   width: 40px;
-  background-color: #16a34a;
-  color : white;
+  background-color: #dc2626;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
 }
 
+.delete-btn-icon svg {
+    fill: white;
+}
+
 /* Animation hover */
-.add-btn:hover .add-btn-text {
+.delete-btn:hover .delete-btn-text {
   transform: translateX(80px);
 }
 
-.add-btn:hover .add-btn-icon {
+.delete-btn:hover .delete-btn-icon {
   width: 100%;
 }
 
 /* Effet clic */
-.add-btn:active {
-  background-color: #15803d;
+.delete-btn:active {
+  background-color: #b91c1c;
 }

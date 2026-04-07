@@ -1,29 +1,38 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import "./Affichage.css";
+import Note from "./Note";
+import AddNoteButton from "./AddNoteButton";
 
-function Affichage({ tasks }) {
-  const [note, setNote] = useState(null);
+function Affichage() {
+  const [notes, setNotes] = useState([]);
+
+  const fetchNotes = async () => {
+    try {
+      const response = await fetch("http://localhost:3001/notes");
+      const data = await response.json();
+      setNotes(data);
+    } catch (error) {
+      console.error("Error fetching notes:", error);
+    }
+  };
 
   useEffect(() => {
-    const fetchNote = async () => {
-      try {
-        const response = await fetch('http://localhost:3001/notes/note1');
-        const data = await response.json();
-        setNote(data);
-      } catch (error) {
-        console.error('Error fetching note:', error);
-      }
-    };
-
-    fetchNote();
+    fetchNotes();
   }, []);
 
   return (
     <div className="Affichage">
-        <h2>Liste des tâches</h2>
-        <p>{JSON.stringify(tasks)}</p>
-        <p>{JSON.stringify(note)}</p>
+      <h2>Liste des tâches</h2>
+      {notes.length === 0 ? (
+        <p>Aucune note disponible</p>
+      ) : (
+        notes.map((note) => <Note key={note.id} note={note} />)
+      )}
+
+      {/* Passe fetchNotes pour recharger après création */}
+      <AddNoteButton onAdd={fetchNotes} />
     </div>
-    );
+  );
 }
 
 export default Affichage;
