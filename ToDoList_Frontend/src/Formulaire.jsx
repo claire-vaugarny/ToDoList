@@ -1,63 +1,68 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import './Formulaire.css';
+import AddToDoButton from './AddTodoButton';
 
-function Formulaire({ onUpdateTasks }) {
+function Formulaire({ noteData, onUpdateTasks }) {
+  // noteData = { id, title, todos: [{id, label}, ...] }
   const [title, setTitle] = useState('');
-  const [todo1, setTodo1] = useState('');
-  const [todo2, setTodo2] = useState('');
-  const [todo3, setTodo3] = useState('');
+  const [todos, setTodos] = useState([]);
+
+  // Initialisation avec les données reçues
+  useEffect(() => {
+    if (noteData) {
+      setTitle(noteData.title || '');
+      setTodos(noteData.todos || []);
+    }
+  }, [noteData]);
+
+  const handleBlur = () => {
+    // On renvoie la structure complète
+    onUpdateTasks({ id: noteData?.id, title, todos });
+  };
+
+  const handleTodoChange = (index, value) => {
+    const newTodos = [...todos];
+    newTodos[index] = { ...newTodos[index], label: value };
+    setTodos(newTodos);
+  };
+
+  const addTodoInput = () => {
+    setTodos([...todos, { id: `c${todos.length + 1}`, label: '' }]);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ title, todo1, todo2, todo3 });
-    // Ici, vous pouvez ajouter la logique pour envoyer les données à votre backend ou les traiter
-  };
-
-  const handleBlur = () => {
-    onUpdateTasks({ title, todo1, todo2, todo3 });
+    console.log({ title, todos });
   };
 
   return (
     <form onSubmit={handleSubmit} className="Formulaire">
-      <div>
-        <label htmlFor="title">Titre:</label>
+      {/* Input du titre */}
+      <div className="inputBox title-input">
         <input
           type="text"
-          id="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           onBlur={handleBlur}
         />
       </div>
-      <div>
-        <label htmlFor="todo1">Todo1:</label>
-        <input
-          type="text"
-          id="todo1"
-          value={todo1}
-          onChange={(e) => setTodo1(e.target.value)}
-          onBlur={handleBlur}
-        />
-      </div>
-      <div>
-        <label htmlFor="todo2">Todo2:</label>
-        <input
-          type="text"
-          id="todo2"
-          value={todo2}
-          onChange={(e) => setTodo2(e.target.value)}
-          onBlur={handleBlur}
-        />
-      </div>
-      <div>
-        <label htmlFor="todo3">Todo3:</label>
-        <input
-          type="text"
-          id="todo3"
-          value={todo3}
-          onChange={(e) => setTodo3(e.target.value)}
-          onBlur={handleBlur}
-        />
-      </div>
+
+      {/* Inputs pour chaque todo */}
+      {todos.map((todo, index) => (
+        <div className="inputBox" key={todo.id}>
+          <input
+            type="text"
+            value={todo.label}
+            onChange={(e) => handleTodoChange(index, e.target.value)}
+            onBlur={handleBlur}
+          />
+        </div>
+      ))}
+
+      {/* Bouton pour ajouter un todo */}
+      <AddToDoButton onClick={addTodoInput} />
+
+      <button type="submit">Valider</button>
     </form>
   );
 }

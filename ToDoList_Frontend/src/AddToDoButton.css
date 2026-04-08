@@ -1,0 +1,29 @@
+.add-todo-btn {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+  transition: transform 0.3s ease;
+}
+
+.add-todo-btn:hover {
+  transform: rotate(90deg);
+}
+
+.add-todo-icon {
+  stroke: #a1a1aa;
+  fill: none;
+  transition: all 0.3s ease;
+}
+
+/* hover */
+.add-todo-btn:hover .add-todo-icon {
+  fill: transparent;
+}
+
+/* active */
+.add-todo-btn:active .add-todo-icon {
+  stroke: #e4e4e7;
+  fill: #52525b;
+  transition-duration: 0s;
+}

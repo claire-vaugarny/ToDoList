@@ -1,0 +1,48 @@
+.modify-btn {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #3b82f6;
+  background-color: #3b82f6;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Texte */
+.modify-btn-text {
+  color: white;
+  font-weight: 600;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Icône */
+.modify-btn-icon {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 40px;
+  background-color: #2563eb;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Animation hover */
+.modify-btn:hover .modify-btn-text {
+  transform: translateX(80px);
+}
+
+.modify-btn:hover .modify-btn-icon {
+  width: 100%;
+}
+
+/* Effet clic */
+.modify-btn:active {
+  background-color: #1d4ed8;
+}

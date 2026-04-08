@@ -1,0 +1,36 @@
+/* Tous les inputBox */
+.inputBox {
+  position: relative;
+  width: 250px;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  background: transparent;
+  border: 2px solid transparent; /* bordure invisible par défaut */
+  border-left: 2px solid #000;   /* style par défaut */
+  border-bottom: 2px solid #000; /* style par défaut */
+  border-radius: 8px;
+  transition: border 0.3s ease;
+  font-size: 1em;
+  color: #000;
+}
+
+/* Focus : bordure complète */
+.inputBox input:focus {
+  border: 2px solid #000;
+}
+
+/* Placeholder */
+.inputBox input::placeholder {
+  color: #000;
+  opacity: 0.6;
+}
+
+/* Input du titre */
+.inputBox.title-input input {
+  font-weight: bold;       /* texte plus épais */
+  font-size: 1.2em;        /* un peu plus grand */
+}

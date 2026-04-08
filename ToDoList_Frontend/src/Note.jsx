@@ -1,10 +1,13 @@
 import "./Note.css";
 import DeleteNoteButton from "./DeleteNoteButton";
+import AddToDoButton from "./AddTodoButton";
+import ModifyNoteButton from "./ModifyNoteButton";
 
 function Note({ note }) {
   return (
     <div className="card">
       <div className="card-details">
+        <ModifyNoteButton note={note} />
         <DeleteNoteButton noteId={note.id} />
         
         <p className="text-title">{note.title}</p>
@@ -14,7 +17,6 @@ function Note({ note }) {
             {todo.label}
           </p>
         ))}
-
       </div>
     </div>
   );

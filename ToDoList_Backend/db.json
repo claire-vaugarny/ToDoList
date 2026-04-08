@@ -19,9 +19,10 @@
       ]
     },
     {
-      "id": "note2",
-      "title": "Autre note",
-      "todos": []
+      "title": "",
+      "todos": [],
+      "id": "-iMTJCncPNs"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
