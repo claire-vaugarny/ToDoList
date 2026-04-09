@@ -101,3 +101,31 @@
   display: inline-block;
   animation: tick-pop 0.4s ease forwards;
 }
+
+/* Barre animée qui traverse le texte */
+.todo-item label {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color: inherit;
+  overflow: hidden;
+}
+
+/* La ligne traversante (avant) */
+.todo-item label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.85em;
+  transform: translateY(-50%);
+  height: 2px;
+  width: 0; /* largeur initiale = 0 */
+  background-color: #c3c8de; /* couleur de la barre */
+  border-radius: 2px;
+  transition: width 0.4s ease; /* animation fluide */
+}
+
+/* Quand la todo est cochée */
+.todo-item.checked label::before {
+  width: 100%; /* la barre traverse tout le texte */
+}

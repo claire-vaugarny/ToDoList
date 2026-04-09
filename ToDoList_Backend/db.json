@@ -7,7 +7,7 @@
         {
           "id": "c1",
           "label": "Milk",
-          "checked": true
+          "checked": false
         },
         {
           "id": "c2",
@@ -27,7 +27,7 @@
         {
           "id": "r1",
           "label": "Dentistgdjhgjhjhgjhgjhdjdhgjdgjhjdj",
-          "checked": false
+          "checked": true
         },
         {
           "id": "r2",

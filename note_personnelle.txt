@@ -1,0 +1,21 @@
+Mise à jour immédiate de l’UI
+setCheckedItems((prev) => ({
+  ...prev,
+  [id]: newCheckedState,
+}));
+L’état React change tout de suite, l’utilisateur voit le résultat sans attendre le serveur.
+Fonction asynchrone auto-invoquée
+(async () => { ... })();
+On crée une Promise séparée pour le fetch.
+Comme on n’await pas cette fonction principale, le thread JS continue son exécution et le debugger ne se bloque pas.
+fetch avec await
+const response = await fetch(...);
+if (!response.ok) throw new Error(...);
+On garde async/await pour la lisibilité et la gestion des erreurs, mais dans cette fonction séparée.
+Si le serveur renvoie une erreur ou est lent, l’UI n’est pas bloquée.
+Revert si erreur
+setCheckedItems((prev) => ({
+  ...prev,
+  [id]: !newCheckedState,
+}));
+Si le fetch échoue, on revient à l’état précédent pour ne pas tromper l’utilisateur.
