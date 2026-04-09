@@ -6,21 +6,35 @@
       "todos": [
         {
           "id": "c1",
-          "label": "Milk"
+          "label": "Milk",
+          "checked": true
         },
         {
           "id": "c2",
-          "label": "Cheese"
+          "label": "Cheese",
+          "checked": false
         },
         {
           "id": "c3",
-          "label": "Coffee"
+          "label": "Coffee",
+          "checked": false
         }
       ]
     },
     {
-      "title": "",
-      "todos": [],
+      "title": "Rendez-vous",
+      "todos": [
+        {
+          "id": "r1",
+          "label": "Dentistgdjhgjhjhgjhgjhdjdhgjdgjhjdj",
+          "checked": false
+        },
+        {
+          "id": "r2",
+          "label": "Meeting with Bob",
+          "checked": true
+        }
+      ],
       "id": "-iMTJCncPNs"
     }
   ],

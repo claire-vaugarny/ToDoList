@@ -20,7 +20,7 @@ function DeleteNoteButton({ noteId }) {
 
   return (
     <button className="delete-btn" onClick={deleteNote}>
-      <span className="delete-btn-text">Supprimer note</span>
+      <span className="delete-btn-text">Supprimer</span>
       <span className="delete-btn-icon">
         <svg
           xmlns="http://www.w3.org/2000/svg"

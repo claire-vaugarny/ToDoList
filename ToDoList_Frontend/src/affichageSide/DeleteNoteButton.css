@@ -1,6 +1,7 @@
 .delete-btn {
   position: relative;
-  width: 160px;
+  display: inline-flex;
+  width: auto;
   height: 40px;
   border-radius: 10px;
   border: 1px solid #ef4444;
@@ -9,13 +10,14 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  padding-right: 45px; /*Décalage pour laisser de la place à l'icône */
 }
 
 /* Texte */
 .delete-btn-text {
   color: white;
   font-weight: 600;
-  margin-left: 5px;
+  margin: 0px 5px 0px 5px;
   transition: transform 0.3s ease;
 }
 

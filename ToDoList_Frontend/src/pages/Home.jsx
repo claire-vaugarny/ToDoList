@@ -1,5 +1,5 @@
-import Affichage from "../Affichage.jsx";
-import Formulaire from "../Formulaire.jsx";
+import Affichage from "../affichageSide/Affichage.jsx";
+import Formulaire from "../formSide/Formulaire.jsx";
 import Navbar from "./Navbar.jsx";
 import './Home.css';
 import { useState } from 'react';

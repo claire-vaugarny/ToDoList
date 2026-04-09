@@ -14,7 +14,7 @@ function ModifyNoteButton({ onModify }) {
 
   return (
     <button className="modify-btn" onClick={modifyNote}>
-      <span className="modify-btn-text">Modifier note</span>
+      <span className="modify-btn-text">Modifier</span>
       <span className="modify-btn-icon">
         <svg
           className="icon"
