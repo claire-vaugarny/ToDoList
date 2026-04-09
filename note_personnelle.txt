@@ -19,3 +19,12 @@ setCheckedItems((prev) => ({
   [id]: !newCheckedState,
 }));
 Si le fetch échoue, on revient à l’état précédent pour ne pas tromper l’utilisateur.
+
+
+REMARQUE
+Pourquoi ton PATCH ne fonctionne pas
+JSON Server ne supporte pas automatiquement les sous-ressources comme /notes/:noteId/todos/:todoId.
+Avec JSON Server, tu peux faire un PATCH uniquement sur des ressources principales, par exemple /notes/:id.
+Donc envoyer { checked: true } sur /notes/:noteId/todos/:todoId ne sera pas pris en compte, car /todos n’existe pas comme endpoint indépendant.
+
+En pratique, ça veut dire que tu dois toujours envoyer toute la note si tu veux que JSON Server mette à jour un champ dans un todo.
