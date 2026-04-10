@@ -16,13 +16,17 @@ function Home(){
         setSelectedNote(note);
     };
 
+    const handleNewNote = (newNoteData) => {
+        setSelectedNote(newNoteData);
+    };
+
     return(
     <div className="homeDiv">
         <h1>Home page</h1>
        <Navbar></Navbar>
        <div className="interface">
         <Formulaire noteData={selectedNote} onUpdateTasks={updateTasks}></Formulaire>
-        <Affichage tasks={tasks} onModifyNote={switchToEditMode}></Affichage>
+        <Affichage tasks={tasks} onModifyNote={switchToEditMode} onNewNote={handleNewNote}></Affichage>
        </div>
     </div>
     );

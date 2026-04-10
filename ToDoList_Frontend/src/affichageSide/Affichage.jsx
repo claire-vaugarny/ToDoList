@@ -3,7 +3,7 @@ import "./Affichage.css";
 import Note from "./Note";
 import AddNoteButton from "./AddNoteButton";
 
-function Affichage({ onModifyNote }) {
+function Affichage({ onModifyNote, onNewNote }) {
   const [notes, setNotes] = useState([]);
 
   const fetchNotes = async () => {
@@ -30,7 +30,7 @@ function Affichage({ onModifyNote }) {
       )}
 
       {/* Passe fetchNotes pour recharger après création */}
-      <AddNoteButton onAdd={fetchNotes} />
+      <AddNoteButton onAdd={fetchNotes} onNewNote={onNewNote} />
     </div>
   );
 }

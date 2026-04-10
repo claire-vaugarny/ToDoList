@@ -1,13 +1,23 @@
 import "./AddNoteButton.css";
 
-function AddNoteButton({ onAdd }) {
+function AddNoteButton({ onAdd, onNewNote }) {
   const newNote = async () => {
     try {
-      await fetch("http://localhost:3001/notes", {
+      const response = await fetch("http://localhost:3001/notes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title: "", todos: [] }),
+        body: JSON.stringify({ 
+          title: "Titre", 
+          todos: [{ id: "1", label: "Tache", checked: false }] 
+        }),
       });
+
+      if (response.ok) {
+        const newNoteData = await response.json();
+        
+        // Envoie les données de la nouvelle note au formulaire
+        if (onNewNote) onNewNote(newNoteData);
+      }
 
       // Appelle la fonction parent pour recharger les notes
       if (onAdd) onAdd();
