@@ -6,9 +6,14 @@ import { useState } from 'react';
 
 function Home(){
     const [tasks, setTasks] = useState([]);
+    const [selectedNote, setSelectedNote] = useState(null);
 
     const updateTasks = (newTasks) => {
         setTasks(newTasks);
+    };
+
+    const switchToEditMode = (note) => {
+        setSelectedNote(note);
     };
 
     return(
@@ -16,8 +21,8 @@ function Home(){
         <h1>Home page</h1>
        <Navbar></Navbar>
        <div className="interface">
-        <Formulaire onUpdateTasks={updateTasks}></Formulaire>
-        <Affichage tasks={tasks}></Affichage>
+        <Formulaire noteData={selectedNote} onUpdateTasks={updateTasks}></Formulaire>
+        <Affichage tasks={tasks} onModifyNote={switchToEditMode}></Affichage>
        </div>
     </div>
     );

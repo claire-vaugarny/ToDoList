@@ -4,7 +4,7 @@ import "./Note.css";
 import DeleteNoteButton from "./DeleteNoteButton";
 import ModifyNoteButton from "./ModifyNoteButton";
 
-function Note({ note }) {
+function Note({ note, onModifyNote }) {
   const [checkedItems, setCheckedItems] = useState({});
 
   useEffect(() => {
@@ -77,7 +77,7 @@ const handleChange = (id) => {
         </div>
 
         <div className="btn-container">
-          <ModifyNoteButton note={note} />
+          <ModifyNoteButton note={note} onModify={onModifyNote} />
           <DeleteNoteButton noteId={note.id} />
         </div>
       </div>

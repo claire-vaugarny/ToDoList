@@ -1,15 +1,9 @@
 import "./ModifyNoteButton.css";
 
-function ModifyNoteButton({ onModify }) {
+function ModifyNoteButton({ note, onModify }) {
   const modifyNote = async () => {
-    // Logique pour modifier une note, à implémenter selon les besoins
-    try {
-      // Exemple : fetch pour modifier une note
-      // await fetch("http://localhost:3001/notes/id", { method: "PUT", ... });
-      if (onModify) onModify();
-    } catch (error) {
-      console.error("Erreur modification note :", error);
-    }
+    // Passe les données de la note au formulaire
+    if (onModify && note) onModify(note);
   };
 
   return (

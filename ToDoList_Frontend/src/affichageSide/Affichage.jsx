@@ -3,7 +3,7 @@ import "./Affichage.css";
 import Note from "./Note";
 import AddNoteButton from "./AddNoteButton";
 
-function Affichage() {
+function Affichage({ onModifyNote }) {
   const [notes, setNotes] = useState([]);
 
   const fetchNotes = async () => {
@@ -26,7 +26,7 @@ function Affichage() {
       {notes.length === 0 ? (
         <p>Aucune note disponible</p>
       ) : (
-        notes.map((note) => <Note key={note.id} note={note} />)
+        notes.map((note) => <Note key={note.id} note={note} onModifyNote={onModifyNote} />)
       )}
 
       {/* Passe fetchNotes pour recharger après création */}
